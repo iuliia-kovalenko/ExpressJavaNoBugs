@@ -1,7 +1,7 @@
 package practice_3;
 
 public class Student {
-    final static int MAX_YEARS = 11;
+    static final int MAX_YEARS = 11;
     static int studentCount;
 
     static {
@@ -18,11 +18,11 @@ public class Student {
     }
 
 
-    int getAge() {
+    public int getAge() {
         return this.age;
     }
 
-    static void printMaxYears() {
+    public static void printMaxYears() {
 //        int a = 1;
         System.out.println(MAX_YEARS);
     }

@@ -8,5 +8,10 @@ public class LibraryTest {
         System.out.println(library.year);
         System.out.println(library.category);
 
+        System.out.println(library.getAuthor());
+        System.out.println(library.getCategory());
+        System.out.println(library.getBookTitle());
+        System.out.println(library.getYear());
+
     }
 }

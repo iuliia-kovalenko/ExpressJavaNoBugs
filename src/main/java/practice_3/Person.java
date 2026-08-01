@@ -31,7 +31,7 @@ public class Person {
         this.lastName = lastName;
     }
 
-    void printPersonInfo() {
+    public void printPersonInfo() {
         System.out.println("Имя: " + firstName + ", Фамилия: " + lastName +  ", SSN: " + ssn);
     }
 }

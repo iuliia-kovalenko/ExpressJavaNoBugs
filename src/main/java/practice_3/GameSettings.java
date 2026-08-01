@@ -5,19 +5,23 @@ public class GameSettings {
     final String gameName;
     int currentPlayers;
 
-    GameSettings(String gameName) {
+    public GameSettings(String gameName) {
         this.gameName = gameName;
     }
 
-    static void setMaxPlayers(int newMaxPlayers) {
+    public static void setMaxPlayers(int newMaxPlayers) {
         maxPlayers = newMaxPlayers;
     }
 
-    void addPlayer() {
+    public void addPlayer() {
+        if(maxPlayers == currentPlayers) {
+            System.out.println("You can not add another player, max limit reached");
+            return;
+        }
         currentPlayers ++;
     }
 
-    void printGameStatus() {
+    public void printGameStatus() {
         System.out.println("Game name: " + this.gameName + ", current players: " + this.currentPlayers + ", max players: "
         + maxPlayers);
     }
