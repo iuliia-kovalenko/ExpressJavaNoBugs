@@ -4,27 +4,27 @@ public class Laptop {
     String brand;
     double price;
 
-    Laptop(String brand, double price) {
+    public Laptop(String brand, double price) {
         this.brand = brand;
         this.price = price;
     }
-    String getBrand() {
+    public String getBrand() {
         return this.brand;
     }
 
-    double getPrice() {
+    public double getPrice() {
         return this.price;
     }
 
-    void setBrand(String brand) {
+    public void setBrand(String brand) {
         this.brand = brand;
     }
 
-    void setPrice(double price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    void printInfo() {
+    public void printInfo() {
         System.out.println("Brand: " + this.brand + ", price: " + this.price);
     }
 }

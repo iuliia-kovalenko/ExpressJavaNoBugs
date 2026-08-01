@@ -3,23 +3,23 @@ package practice_2;
 public class Circle {
     double radius;
 
-    Circle(double radius) {
+    public Circle(double radius) {
         this.radius = radius;
     }
 
-    double getRadius() {
+    public double getRadius() {
         return this.radius;
     }
 
-    void setRadius(double radius) {
+    public void setRadius(double radius) {
         this.radius = radius;
     }
 
-    double calculateArea() {
+    public double calculateArea() {
         return Math.PI * Math.pow(this.radius, 2);
     }
 
-    double calculateCircumference() {
+    public double calculateCircumference() {
         return 2 * Math.PI * this.radius;
     }
 }

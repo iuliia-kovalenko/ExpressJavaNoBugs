@@ -4,7 +4,7 @@ public class Book {
     String title;
     String author;
 
-    Book(String title, String author) {
+    public Book(String title, String author) {
         this.title = title;
         this.author = author;
     }
@@ -25,7 +25,7 @@ public class Book {
         this.author = author;
     }
 
-    void print() {
+    public void print() {
         System.out.println("Title: " + this.title + ", author: " + this.author);
     }
 }

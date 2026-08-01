@@ -17,11 +17,11 @@ public class Point {
         return y;
     }
 
-    void setX(double x) {
+    public void setX(double x) {
         this.x = x;
     }
 
-    void print() {
+    public void print() {
         System.out.println("Координата X: " + this.x + ", координата Y: " + this.y);
     }
 }

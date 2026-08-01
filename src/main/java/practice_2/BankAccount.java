@@ -17,19 +17,27 @@ public class BankAccount {
         return balance;
     }
 
-    void setOwner(String owner) {
+    public void setOwner(String owner) {
         this.owner = owner;
     }
 
-    void deposit(double amount) {
+    public void deposit(double amount) {
         this.balance += amount;
     }
 
-    void withdraw(double amount) {
+    public void withdraw(double amount) {
+        if (amount < 0) {
+            System.out.println("Amount can not be negative");
+            return;
+        }
+        if (this.balance < amount) {
+            System.out.println("Not enough balance for withdrawal");
+            return;
+        }
         this.balance -= amount;
     }
 
-    void printBalance() {
+    public void printBalance() {
         System.out.println("Balance of the " + this.owner + "= " + this.balance);
     }
 }

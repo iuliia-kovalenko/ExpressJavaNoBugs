@@ -4,28 +4,28 @@ public class StudentGroup {
     String groupName;
     int studentCount;
 
-    StudentGroup(String groupName, int studentCount) {
+    public StudentGroup(String groupName, int studentCount) {
         this.groupName = groupName;
         this.studentCount = studentCount;
     }
 
-    String getGroupName() {
+    public String getGroupName() {
         return this.groupName;
     }
 
-    int getStudentCount() {
+    public int getStudentCount() {
         return this.studentCount;
     }
 
-    void setGroupName(String groupName) {
+    public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
 
-    void setStudentCount(int studentCount) {
+    public void setStudentCount(int studentCount) {
         this.studentCount = studentCount;
     }
 
-    void printInfo() {
+    public void printInfo() {
         System.out.println("GroupName: " + this.groupName + ", total students: " + this.studentCount);
     }
 }

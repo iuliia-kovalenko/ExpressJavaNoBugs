@@ -4,9 +4,9 @@ public class Student {
     int age;
     String name;
 
-    Student(){}
+    public Student(){}
 
-    Student(int someAge, String someName) {
+    public Student(int someAge, String someName) {
         this.age = someAge;
         this.name = someName;
     }
@@ -27,7 +27,7 @@ public class Student {
         this.name = name;
     }
 
-    void print() {
+    public void print() {
         System.out.println("Age " + this.age + ", name " + this.name );
     }
 }
