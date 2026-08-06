@@ -2,7 +2,10 @@ package practice_4.homework_4;
 
 import java.util.Scanner;
 
+
 public class SwitchHomeTask {
+    static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
         System.out.println(dayOfWeek());
         System.out.println(ticketPrice());
@@ -13,7 +16,6 @@ public class SwitchHomeTask {
     }
 
     public static String dayOfWeek() {
-        Scanner sc = new Scanner(System.in);
         int day = sc.nextInt();
         String dayDescription = "";
 
@@ -31,7 +33,6 @@ public class SwitchHomeTask {
     }
 
     public static String ticketPrice() {
-        Scanner sc = new Scanner(System.in);
         int day = sc.nextInt();
         switch (day) {
             case 1, 2, 3, 4, 5 -> {
@@ -47,11 +48,10 @@ public class SwitchHomeTask {
     }
 
     public static String scoreMapping() {
-        Scanner sc = new Scanner(System.in);
         int score = sc.nextInt();
         String description = "";
         if (score < 0 || score > 100) {
-            System.out.println("Некорректно введена оценка");
+            return "Некорректно введена оценка";
         }
         switch (score / 10) {
             case 9, 10 -> description = "A";
@@ -67,8 +67,7 @@ public class SwitchHomeTask {
 //    Для каждой команды нужно вывести соответствующее сообщение, например: "Система запущена".
 
     public static String commandMapping() {
-        Scanner sc = new Scanner(System.in);
-
+        sc.nextLine();
         String command = sc.nextLine();
         String mapping = "";
 
@@ -85,11 +84,10 @@ public class SwitchHomeTask {
 //    Программа принимает два числа и оператор (+, -, *, /), затем выполняет операцию и выводит результат.
 
     public static int calculator() {
-        Scanner sc = new Scanner(System.in);
         int number1 = sc.nextInt();
         int number2 = sc.nextInt();
-        Scanner sc1 = new Scanner(System.in);
-        String sign = sc1.nextLine();
+        sc.nextLine();
+        String sign = sc.nextLine();
 
         switch (sign) {
             case "+" -> {
@@ -114,5 +112,4 @@ public class SwitchHomeTask {
             }
         }
     }
-
 }

@@ -1,6 +1,5 @@
 package practice_4.homework_4;
 
-import com.sun.source.tree.BreakTree;
 
 import java.util.Scanner;
 
@@ -82,7 +81,7 @@ public class IfElseHomeTask {
         System.out.print("Введите ваш возраст: ");
         int age = sc.nextInt();
         String discount = "";
-        if (age <= 18) {
+        if (age < 18) {
             discount = "25 %";
         } else if (age >= 65 ) {
             discount = "30 %";
