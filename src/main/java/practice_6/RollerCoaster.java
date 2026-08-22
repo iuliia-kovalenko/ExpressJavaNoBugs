@@ -1,6 +1,6 @@
 package practice_6;
 
-public class RollerCoaster extends Attraction{
+public class RollerCoaster extends Attraction {
     @Override
     public void info() {
         System.out.println("Острые ощущения");

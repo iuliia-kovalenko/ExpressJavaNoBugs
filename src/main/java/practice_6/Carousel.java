@@ -1,6 +1,6 @@
 package practice_6;
 
-public class Carousel extends Attraction{
+public class Carousel extends Attraction {
     @Override
     public void info() {
         System.out.println("Спокойный аттракцион");

@@ -1,6 +1,6 @@
 package practice_6;
 
-public class Cow extends FarmAnimal{
+public class Cow extends FarmAnimal {
     @Override
     public void feed() {
         System.out.println("ест траву");

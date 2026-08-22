@@ -73,17 +73,17 @@ public class Main {
         Animal elephant = new Elephant();
         zoo.setAnimal(elephant);
         zoo.showAnimalBehavior();
+        System.out.println("-------------");
 
         PetManager kolya = new PetManager();
         Pet cat = new Cat();
         kolya.setPet(cat);
         kolya.handlePet();
-
         System.out.println("-------------");
-
         Pet dog = new Dog();
         kolya.setPet(dog);
         kolya.handlePet();
+        System.out.println("-------------");
 
         Menu menu = new Menu("Summer menu");
         Dish hotdish = new HotDish("borsh", 30);
@@ -93,11 +93,17 @@ public class Main {
         menu.addDish(beverage);
         menu.addDish(beverage1);
         menu.infoMenu();
+        System.out.println("-------------");
 
         Aquarium aquarium = new Aquarium();
         SeaCreature shark = new Shark();
+        StarFish starFish = new StarFish();
         aquarium.setCreature(shark);
         aquarium.showBehavior();
+        System.out.println("-------------");
+        aquarium.setCreature(starFish);
+        aquarium.showBehavior();
+        System.out.println("-------------");
 
         Farm farm = new Farm();
         FarmAnimal cow = new Cow();
@@ -107,20 +113,35 @@ public class Main {
         FarmAnimal chicken = new Chicken();
         farm.setFarmAnimal(chicken);
         farm.serviceAnimal();
+        System.out.println("-------------");
 
         BotanicalGarden botanicalGarden = new BotanicalGarden();
         Plant orchid = new Orchid();
         botanicalGarden.setPlant(orchid);
         botanicalGarden.maintainPlant();
+        System.out.println("-------------");
+        Plant cactus = new Cactus();
+        botanicalGarden.setPlant(cactus);
+        botanicalGarden.maintainPlant();
+        System.out.println("-------------");
 
         AmusementPark park = new AmusementPark();
         Attraction rollerCoaster = new RollerCoaster();
         park.setAttraction(rollerCoaster);
         park.operateAttraction();
+        System.out.println("-------------");
+        Attraction carousel = new Carousel();
+        park.setAttraction(carousel);
+        park.operateAttraction();
+        System.out.println("-------------");
 
         Museum museum = new Museum();
         Exhibit manuscript = new Manuscript();
         museum.setExhibit(manuscript);
+        museum.showExhibit();
+        System.out.println("-------------");
+        Exhibit sculpture = new Sculpture();
+        museum.setExhibit(sculpture);
         museum.showExhibit();
     }
 }

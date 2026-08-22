@@ -1,6 +1,6 @@
 package practice_6;
 
-public class Bird extends Animal{
+public class Bird extends Animal {
     @Override
     public void makeSound() {
         System.out.println("Птица чирикает");

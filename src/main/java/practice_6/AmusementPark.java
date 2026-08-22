@@ -7,7 +7,7 @@ public class AmusementPark {
         this.attraction = attraction;
     }
 
-    public void operateAttraction(){
+    public void operateAttraction() {
         attraction.info();
         attraction.maintain();
     }

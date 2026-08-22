@@ -1,6 +1,6 @@
 package practice_6;
 
-public class Dog extends Pet{
+public class Dog extends Pet {
     @Override
     public void feed() {
         System.out.println("ест сухой корм");

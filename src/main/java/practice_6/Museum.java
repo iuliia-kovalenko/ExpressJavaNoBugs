@@ -7,7 +7,7 @@ public class Museum {
         this.exhibit = exhibit;
     }
 
-    public void showExhibit(){
+    public void showExhibit() {
         exhibit.describe();
         exhibit.preserve();
     }

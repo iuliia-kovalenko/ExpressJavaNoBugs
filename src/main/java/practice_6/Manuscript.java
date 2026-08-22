@@ -1,6 +1,6 @@
 package practice_6;
 
-public class Manuscript extends Exhibit{
+public class Manuscript extends Exhibit {
     @Override
     public void describe() {
         System.out.println("Древний текст");

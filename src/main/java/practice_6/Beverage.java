@@ -1,6 +1,6 @@
 package practice_6;
 
-public class Beverage extends Dish{
+public class Beverage extends Dish {
     private String name;
     private int volume;
 

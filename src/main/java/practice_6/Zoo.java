@@ -7,7 +7,7 @@ public class Zoo {
         this.animal = animal;
     }
 
-    public void showAnimalBehavior(){
+    public void showAnimalBehavior() {
         animal.move();
         animal.makeSound();
     }

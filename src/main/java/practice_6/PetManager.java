@@ -7,7 +7,7 @@ public class PetManager {
         this.pet = pet;
     }
 
-    public void handlePet(){
+    public void handlePet() {
         pet.feed();
         pet.interact();
     }

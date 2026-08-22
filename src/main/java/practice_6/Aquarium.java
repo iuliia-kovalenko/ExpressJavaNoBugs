@@ -7,7 +7,7 @@ public class Aquarium {
         this.seaCreature = creature;
     }
 
-    public void showBehavior(){
+    public void showBehavior() {
         seaCreature.behavior();
     }
 }

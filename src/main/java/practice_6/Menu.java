@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Menu {
     private String name;
-    List<Dish> dishes = new ArrayList<>();
+    private List<Dish> dishes = new ArrayList<>();
 
     public Menu(String name) {
         this.name = name;
@@ -15,8 +15,9 @@ public class Menu {
         dishes.add(dish);
     }
 
-    public void infoMenu(){
-        for (Dish dish: dishes) {
+    public void infoMenu() {
+        System.out.println(name);
+        for (Dish dish : dishes) {
             dish.getDescription();
         }
     }
