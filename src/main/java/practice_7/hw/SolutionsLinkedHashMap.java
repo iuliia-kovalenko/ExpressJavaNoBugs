@@ -1,7 +1,6 @@
 package practice_7.hw;
 
 import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -76,7 +75,7 @@ class History {
     }
 
     public void addNewElement(String page, String pageName) {
-        if (history.size() == 10) {
+        if (history.size() == 10 && !history.containsKey(page)) {
             String firstKey = history.keySet().stream().findFirst().get();
             history.remove(firstKey);
         }

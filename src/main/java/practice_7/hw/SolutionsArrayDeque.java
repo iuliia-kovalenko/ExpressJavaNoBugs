@@ -22,7 +22,9 @@ public class SolutionsArrayDeque {
         stack.push(10);
         stack.push(3);
         stack.push(15);
-        stack.forEach(el -> System.out.print(stack.pop() + " "));
+        while (!stack.isEmpty()) {
+            System.out.print(stack.pop() + " ");
+        }
 
         //Используйте ArrayDeque как очередь: добавьте элементы в начало и конец, извлеките из обоих концов.
         System.out.println("");

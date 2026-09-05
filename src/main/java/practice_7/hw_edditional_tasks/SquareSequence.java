@@ -9,11 +9,8 @@ public class SquareSequence {
         this.stack = new ArrayDeque<>();
     }
 
-    public void clearStack() {
-        stack.clear();
-    }
-
     public boolean isValid(String str) {
+        stack.clear();
         for (char c : str.toCharArray()) {
             if (c == '(' || c == '[' || c == '{') {
                 stack.push(c);
@@ -35,9 +32,7 @@ public class SquareSequence {
     public static void main(String[] args) {
         SquareSequence squareSequence = new SquareSequence();
         System.out.println(squareSequence.isValid("{{{"));
-        squareSequence.clearStack();
         System.out.println(squareSequence.isValid("{{{}"));
-        squareSequence.clearStack();
         System.out.println(squareSequence.isValid("{{{}}}"));
     }
 }

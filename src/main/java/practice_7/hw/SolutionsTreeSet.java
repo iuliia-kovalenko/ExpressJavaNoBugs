@@ -1,7 +1,5 @@
 package practice_7.hw;
 
-import com.sun.source.tree.Tree;
-
 import java.util.TreeSet;
 
 public class SolutionsTreeSet {

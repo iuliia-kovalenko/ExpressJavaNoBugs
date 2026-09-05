@@ -28,8 +28,9 @@ public class SolutionsLinkedHashSet {
     }
 
     public static void addUnique(Set<String> set, String el) {
-        if (!set.contains(el)) {
-            set.add(el);
+        boolean added = set.add(el);
+        if (added) {
+            System.out.println("Element: " + el + " added successfully");
         } else {
             System.out.println("This element: " + el + " is not unique");
         }

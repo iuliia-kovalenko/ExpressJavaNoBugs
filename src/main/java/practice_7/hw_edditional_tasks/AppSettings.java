@@ -32,7 +32,7 @@ public class AppSettings {
         appSettings.addSetting("data-base", "rds1.admin.com");
         appSettings.addSetting("front-url", "front-stage.admin.com");
         appSettings.getAllSettings();
-        if (appSettings.isSettingExist("hosts")) {
+        if (appSettings.isSettingExist("host")) {
             System.out.println(appSettings.getSettingByKey("host"));
         } else {
             System.out.println("Setting not found");
