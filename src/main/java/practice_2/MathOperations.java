@@ -1,3 +1,5 @@
+package practice_2;
+
 public class MathOperations {
     public static void main(String[] args) {
         System.out.println(add(3, 3));
