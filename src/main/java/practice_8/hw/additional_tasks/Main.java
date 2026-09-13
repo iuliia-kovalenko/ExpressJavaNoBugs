@@ -42,19 +42,18 @@ public class Main {
         integerList1.add(20);
         integerList1.add(20);
         integerList1.add(20);
-        GenericMethods.sum(integerList1);
+        System.out.println(GenericMethods.sum(integerList1));
 
         List<Double> doubleList = new ArrayList<>();
         doubleList.add(10.0);
         doubleList.add(1.0);
         doubleList.add(11.0);
-        GenericMethods.sum(doubleList);
+        System.out.println(GenericMethods.sum(doubleList));
 
         System.out.println("-----------Task5--------------");
 
         List<Number> numberList = new ArrayList<>();
         GenericMethods.addNumbers(numberList);
-        Integer i = (Integer) numberList.get(0);
         numberList.forEach(System.out::println);
 
         System.out.println("-----------Task6--------------");
@@ -66,7 +65,7 @@ public class Main {
         container2.add("first string");
         System.out.println(container2.get());
 
-        System.out.println("-----------Task6--------------");
+        System.out.println("-----------Task7--------------");
         Map<Integer, String> map = new HashMap<>();
         map.put(1, "first");
         map.put(2, "second");

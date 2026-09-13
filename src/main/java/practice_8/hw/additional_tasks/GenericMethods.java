@@ -10,12 +10,12 @@ public class GenericMethods {
         }
     }
 
-    public static void sum(List<? extends Number> list) {
+    public static double sum(List<? extends Number> list) {
         double sum = 0.0;
         for (Number el: list) {
             sum += el.doubleValue();
         }
-        System.out.println(sum);
+        return sum;
     }
 
     public static void addNumbers(List<? super Integer> list) {

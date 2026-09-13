@@ -20,7 +20,7 @@ public class Task4 {
     }
 
     static void checkEmailFormat(String email) {
-        Pattern emailPattern = Pattern.compile("^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$");
+        Pattern emailPattern = Pattern.compile("^[^\\s@]+@[^\\s@]+.[^\\s@]+$");
         Matcher matcher = emailPattern.matcher(email);
         if (!matcher.matches()) {
             throw new InvalidEmailException("Format of the email: " + email + " is not correct");

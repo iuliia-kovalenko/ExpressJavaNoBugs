@@ -8,13 +8,16 @@ package practice_8.hw.exceptions;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 
 public class Task1 {
     public static void main(String[] args) {
-        try {
-            FileReader file = new FileReader("data.txt");
+        try(FileReader file = new FileReader("data.txt")) {
+            System.out.println(file);
         } catch (FileNotFoundException e) {
             System.out.println("File not found " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("IO exception: " + e.getMessage());
         }
     }
 }
