@@ -1,4 +1,4 @@
-package practice_9;
+package practice_9.theory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
