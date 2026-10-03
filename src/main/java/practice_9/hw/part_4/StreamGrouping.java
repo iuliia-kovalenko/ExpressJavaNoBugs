@@ -30,6 +30,7 @@ public class StreamGrouping {
 
     public static Map<Character, List<String>> groupByFirstLetter(List<String> list) {
         return list.stream()
+                .filter(str -> str != null && !str.isEmpty())
                 .collect(Collectors.groupingBy(s -> s.charAt(0)));
     }
 

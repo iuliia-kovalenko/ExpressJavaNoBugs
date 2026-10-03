@@ -33,7 +33,9 @@ public class StreamAggregateOperations {
         // начинающуюся на букву "Б", используя Stream API.
 
         List<String> listTask4 = List.of("Алекс", "Светлана", "Борис", "Бреслав");
-        System.out.println(findFirstElement(listTask4));
+        List<String> listTask4_1 = List.of("Алекс", "Светлана", "Иван");
+        System.out.println(findFirstElement(listTask4).orElse("Not found"));
+        System.out.println(findFirstElement(listTask4_1).orElse("Not found"));
 
         System.out.println("-------------Task5----------------");
         //5. Проверка наличия хотя бы одного элемента по условию
@@ -47,13 +49,13 @@ public class StreamAggregateOperations {
     public static Integer getMax(List<Integer> numbers) {
         return numbers.stream()
                 .max(Comparator.naturalOrder())
-                .orElse(0);
+                .orElseThrow();
     }
 
     public static Integer getMin(List<Integer> numbers) {
         return numbers.stream()
                 .min(Comparator.naturalOrder())
-                .orElse(0);
+                .orElseThrow();
     }
 
     public static Integer getSum(List<Integer> numbers) {

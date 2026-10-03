@@ -12,14 +12,25 @@ public class Main {
         // Реализуйте его с помощью лямбда-выражений: сложение, вычитание, умножение, деление.
 
         MathOperation add = (a, b) -> a + b;
-        MathOperation substract = (a, b) -> a - b;
+        MathOperation subtract = (a, b) -> a - b;
         MathOperation multiply = (a, b) -> a * b;
-        MathOperation divide = (a, b) -> a / b;
+        MathOperation divide = (a, b) -> {
+            if (b == 0) {
+                throw new IllegalArgumentException("Division by zero is forbidden");
+            }
+            return a / b;
+        };
 
         System.out.println(add.operate(1, 4));
-        System.out.println(substract.operate(1, 4));
+        System.out.println(subtract.operate(1, 4));
         System.out.println(multiply.operate(14, 5));
         System.out.println(divide.operate(14, 5));
+        try {
+            System.out.println(divide.operate(14, 0));
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
 
         System.out.println("-------------Task2---------------");
         //2. Использование анонимного класса
@@ -45,14 +56,15 @@ public class Main {
         //4. Лямбда-выражение с Function
         //Задача: Создайте лямбду, которая принимает строку и возвращает её длину.
 
-        Function<String, Integer> getLength = s -> s.length();
+//        Function<String, Integer> getLength = s -> s.length();
+        Function<String, Integer> getLength = String::length;
         System.out.println(getLength.apply("Five"));
 
         System.out.println("-------------Task5---------------");
         //5. Использование Consumer
         //Задача: Напишите лямбду, которая принимает строку и печатает её в консоль.
 
-        Consumer<String> printToConsole = s -> System.out.println(s);
+        Consumer<String> printToConsole = System.out::println;
         printToConsole.accept("String to print");
     }
 }
