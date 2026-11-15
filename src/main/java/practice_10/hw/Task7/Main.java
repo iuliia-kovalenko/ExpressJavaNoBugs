@@ -11,11 +11,10 @@ public class Main {
 
         ExecutorService pools = Executors.newFixedThreadPool(6);
         Runnable task1 = () -> {
-            account1.transfer(account1, account2, 10);
-
+            Account.transfer(account1, account2, 10);
         };
         Runnable task2 = () -> {
-            account2.transfer(account2, account1, 1);
+            Account.transfer(account2, account1, 1);
         };
 
         for (int i = 0; i < 5000; i++) {

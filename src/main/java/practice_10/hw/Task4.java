@@ -36,7 +36,7 @@ public class Task4 {
 }
 
 class Counter {
-    public static int counter = 0;
+    private static int counter = 0;
 
     public static synchronized void increment() {
         counter++;

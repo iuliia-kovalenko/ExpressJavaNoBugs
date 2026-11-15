@@ -15,12 +15,12 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class Task6 {
     static AtomicInteger count = new AtomicInteger(0);
-    static int sum = 0;
+    static AtomicInteger sum = new AtomicInteger(0);
 
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ExecutorService pools = Executors.newFixedThreadPool(3);
-        int[] arrray = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         List<Future<?>> futureTasks = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             int taskNumber = i;
@@ -29,20 +29,20 @@ public class Task6 {
             // i = 2 -> array: 6, 7, 8 (6;9)
             Runnable task = () -> {
                 for (int j = taskNumber*3; j < (taskNumber+1)*3; j++) {
-                    System.out.println("Индекс: " + j + ", Значение: " + arrray[j]);
+                    System.out.println("Индекс: " + j + ", Значение: " + array[j]);
                     count.incrementAndGet();
-                    sum += arrray[j];
+                    sum.addAndGet(array[j]);
                 }
             };
             futureTasks.add(pools.submit(task));
         }
         for (Future<?> el: futureTasks) {
             el.get();
-        };
+        }
 
         pools.shutdown();
 
         System.out.println("Сумма элементов: " + sum);
-        System.out.println("Было обработато элементов: " + count);
+        System.out.println("Было обработано элементов: " + count);
     }
 }

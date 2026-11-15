@@ -9,11 +9,11 @@ import java.util.concurrent.locks.ReentrantLock;
 Для обеспечения правильной работы программы используйте ReentrantLock для синхронизации работы с двумя счетами.
  */
 public class Account {
-    private String name;
-    private int id;
+    private final String name;
+    private final int id;
     private static int count = 0;
     private int balance;
-    private ReentrantLock lock = new ReentrantLock();
+    private final ReentrantLock lock = new ReentrantLock();
 
     public Account(String name, int balance) {
         this.name = name;
@@ -29,7 +29,7 @@ public class Account {
         return balance;
     }
 
-    public boolean transfer(Account accountFrom, Account accountTo, int amount) {
+    public static boolean transfer(Account accountFrom, Account accountTo, int amount) {
         if (accountFrom.equals(accountTo)) {
             return false;
         }
