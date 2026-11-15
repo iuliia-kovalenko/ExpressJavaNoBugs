@@ -32,7 +32,7 @@ public class FindSecondMaxTest extends MethodsTest {
         );
     }
 
-    public static Stream<Arguments> datasetForNegativeCaseEmptyArrayAndLengthLessThanOne() {
+    public static Stream<Arguments> datasetForNegativeCaseEmptyArrayAndLengthLessOrEqualOne() {
         return Stream.of(
                 Arguments.of(new int[]{5}),
                 Arguments.of(new int[0])
@@ -54,8 +54,8 @@ public class FindSecondMaxTest extends MethodsTest {
     }
 
     @ParameterizedTest
-    @MethodSource("datasetForNegativeCaseEmptyArrayAndLengthLessThanOne")
-    public void findSecondMaxNegativeEmptyArrayAndLenthLessThanOne(int[] ints) {
+    @MethodSource("datasetForNegativeCaseEmptyArrayAndLengthLessOrEqualOne")
+    public void findSecondMaxNegativeEmptyArrayAndLengthLessOrEqualOne(int[] ints) {
         assertThrows(IllegalArgumentException.class, () -> {
             methods.findSecondMax(ints);
         }, "Find second max in array with length == 1 or empty array lead to IllegalArgumentException");

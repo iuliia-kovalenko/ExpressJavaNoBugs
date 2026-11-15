@@ -1,5 +1,6 @@
 package practice_11.hw;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -32,5 +33,10 @@ public class IsValidPhoneNumberTest extends MethodsTest {
     @ValueSource(strings = {"12345", "invalid", "+1 abcdefghij", "+1234 1234567890", "+1 123", ""})
     public void notValidFormatOfPhoneNumber(String phoneNumber) {
         assertFalse(methods.isValidPhoneNumber(phoneNumber));
+    }
+
+    @Test
+    public void notValidPhoneNumberForNull() {
+        assertFalse(methods.isValidPhoneNumber(null));
     }
 }

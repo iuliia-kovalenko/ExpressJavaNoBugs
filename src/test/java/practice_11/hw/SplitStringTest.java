@@ -29,7 +29,8 @@ public class SplitStringTest extends MethodsTest {
                 Arguments.of("Java,Python,C++", ",", List.of("Java", "Python", "C++")),
                 Arguments.of("Java:Python:C++", ":", List.of("Java", "Python", "C++")),
                 Arguments.of("", ",", List.of("")),
-                Arguments.of("word", ",", List.of("word"))
+                Arguments.of("word", ",", List.of("word")),
+                Arguments.of("a.b.c", ".", List.of("a", "b", "c"))
         );
     }
 
