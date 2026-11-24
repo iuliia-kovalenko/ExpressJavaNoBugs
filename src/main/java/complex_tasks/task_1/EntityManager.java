@@ -22,7 +22,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * Фильтрация по активности: Возвращает список пользователей с заданным статусом активности.
  */
 public class EntityManager<T extends Entity> {
-    private CopyOnWriteArrayList<T> entities = new CopyOnWriteArrayList<>();
+    private final CopyOnWriteArrayList<T> entities = new CopyOnWriteArrayList<>();
 
     public void add(T entity) {
         entities.add(entity);

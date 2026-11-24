@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 public class TaskService<T> {
-    private Map<T, Task<T>> tasks = new LinkedHashMap<>();
+    private final Map<T, Task<T>> tasks = new LinkedHashMap<>();
 
     public synchronized void addTask(Task<T> task) {
         if (task == null) {

@@ -10,8 +10,8 @@ public class GradeService<T extends Number> {
         if (studentGrade == null) {
             throw new InvalidGradeException("StudentGrade must not be null");
         }
-        if (studentGrade.getGrade().doubleValue() <= 0) {
-            throw new InvalidGradeException("Grade must not be negative or zero");
+        if (studentGrade.getGrade() == null || studentGrade.getGrade().doubleValue() <= 0) {
+            throw new InvalidGradeException("Grade must not be negative or zero or null");
         }
         studentGradeList.add(studentGrade);
     }
@@ -31,7 +31,7 @@ public class GradeService<T extends Number> {
         return studentGradeList.size();
     }
 
-    public List<StudentGrade<T>> getStudentGradeList() {
-        return studentGradeList;
+    public synchronized List<StudentGrade<T>> getStudentGradeList() {
+        return List.copyOf(studentGradeList);
     }
 }

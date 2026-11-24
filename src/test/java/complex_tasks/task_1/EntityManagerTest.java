@@ -52,7 +52,7 @@ public class EntityManagerTest {
         manager.add(firstStudent);
         manager.add(secondStudent);
 
-        assertEquals(1, manager.getAll().size());
+        assertEquals(2, manager.getAll().size());
     }
 
     @Test

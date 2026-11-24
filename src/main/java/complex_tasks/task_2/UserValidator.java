@@ -22,7 +22,7 @@ package complex_tasks.task_2;
  * Исключения: При обнаружении невалидных данных необходимо выбрасывать InvalidUserException.
  */
 public class UserValidator {
-    private boolean validationEnabled = true;
+    private static boolean validationEnabled = true;
 
 
     public void setValidation(boolean flag) {
@@ -56,7 +56,7 @@ public class UserValidator {
             System.out.println("Validation is disabled");
             return true;
         }
-        if (user.getEmail() == null || user.getEmail().isEmpty() || !user.getEmail().matches("^[^\\s@]+@[^\\s@]+.[^\\s@]+$")) {
+        if (user.getEmail() == null || user.getEmail().isEmpty() || !user.getEmail().matches("^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$")) {
             throw new InvalidUserException("Email is not valid");
         }
         return true;

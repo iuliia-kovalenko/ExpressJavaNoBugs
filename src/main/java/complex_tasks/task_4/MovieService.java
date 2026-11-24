@@ -6,13 +6,13 @@ import java.util.List;
 import java.util.Map;
 
 public class MovieService<T extends Number> {
-    private Map<Movie, List<Rating<T>>> movieRatings = new LinkedHashMap<>();
+    private final Map<Movie, List<Rating<T>>> movieRatings = new LinkedHashMap<>();
 
     public synchronized void addRating(Movie movie, Rating<T> rating) {
         if (movie == null || rating == null) {
             throw new InvalidMovieException("Movie or rating can not be null");
         }
-        if (rating.getRating().doubleValue() < 1 || rating.getRating().doubleValue() > 10) {
+        if (rating.getRating() == null || rating.getRating().doubleValue() < 1 || rating.getRating().doubleValue() > 10) {
             throw new InvalidMovieException("Rating must be between 1 and 10");
         }
         movieRatings.putIfAbsent(movie, new ArrayList<>());

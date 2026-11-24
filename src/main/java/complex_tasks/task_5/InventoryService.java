@@ -4,13 +4,13 @@ import java.util.*;
 
 public class InventoryService {
     private boolean isInventoryOpen = true;
-    private Map<String, List<Product>> productStorage = new LinkedHashMap<>();
+    private final Map<String, List<Product>> productStorage = new LinkedHashMap<>();
 
-    public void setInventory(boolean flag) {
+    public synchronized void setInventory(boolean flag) {
         isInventoryOpen = flag;
     }
 
-    public void addProduct(Product product) {
+    public synchronized void addProduct(Product product) {
         if (!isInventoryOpen) {
             throw new OutOfStockException("Not possible to add product");
         }
@@ -21,7 +21,7 @@ public class InventoryService {
         productStorage.get(product.getCategory()).add(product);
     }
 
-    public List<Product> getProductsByCategory(String category) {
+    public synchronized List<Product> getProductsByCategory(String category) {
         if (!isInventoryOpen) {
             throw new OutOfStockException("Not possible to add product");
         }
@@ -31,10 +31,10 @@ public class InventoryService {
         if (!productStorage.containsKey(category)) {
             throw new OutOfStockException("Category was not found");
         }
-        return productStorage.get(category);
+        return List.copyOf(productStorage.get(category));
     }
 
-    public List<Product> getProductByPrice(int price) {
+    public synchronized List<Product> getProductByPrice(int price) {
         if (!isInventoryOpen) {
             throw new OutOfStockException("Not possible to add product");
         }
@@ -45,18 +45,22 @@ public class InventoryService {
                 .toList();
     }
 
-    public void removeProduct(Product product) {
+    public synchronized void removeProduct(Product product) {
         if (!isInventoryOpen) {
             throw new OutOfStockException("Not possible to add product");
         }
         if (product == null) {
             throw new OutOfStockException("Product can not be null");
         }
+        if (!productStorage.containsKey(product.getCategory())) {
+            throw new OutOfStockException("Category was not found");
+        }
         if (!productStorage.get(product.getCategory()).remove(product)) {
             throw new OutOfStockException("Product: " + product + " was not in the storage");
         }
     }
-    public void printAllProducts() {
+
+    public synchronized void printAllProducts() {
         productStorage.forEach((k, v) ->
                 System.out.println("Category: " + k + ", Products: " + v));
     }

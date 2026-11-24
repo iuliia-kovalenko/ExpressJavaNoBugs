@@ -18,6 +18,7 @@ public class UserValidatorTest {
     @BeforeEach
     public void setUp() {
         userValidator = new UserValidator();
+        userValidator.setValidation(true);
     }
 
     @Test
